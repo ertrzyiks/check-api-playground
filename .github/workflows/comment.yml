@@ -1,0 +1,13 @@
+name: Comment test
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  pr_commented:
+    if: ${{ github.event.issue.pull_request }}
+    steps:
+      - name: Init
+        run: welcome
+
