@@ -1,0 +1,15 @@
+name: Comment test
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  pr_commented:
+    name: 'Handle PR comment'
+    runs-on: ubuntu-latest
+    if: ${{ github.event.issue.pull_request }}
+    steps:
+      - name: Init
+        run: welcome
+
